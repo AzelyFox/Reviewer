@@ -3,7 +3,7 @@
 require_once "./inc.php";
 
 # validate service key
-if (isset($_REQUEST["service_id"]))
+if (isset($_REQUEST["service_key"]))
 {
     $service_key = $_REQUEST["service_key"];
     $validation = validateKey($DB, $service_key);
@@ -33,8 +33,9 @@ if (isset($_REQUEST["review_index"]))
 
 # execute review deletion query
 try {
+    $TEMP_TABLE_NAME = "reviewer_".$validation["service_index"];
     /** @noinspection SqlResolve */
-    $DB_SQL = "DELETE FROM ? WHERE `review_index` = ?";
+    $DB_SQL = "DELETE FROM $TEMP_TABLE_NAME WHERE `review_index` = ?";
     $DB_STMT = $DB->prepare($DB_SQL);
     # database query not ready
     if (!$DB_STMT) {
@@ -46,8 +47,7 @@ try {
         echo urldecode($outputJson);
         exit();
     }
-    $TEMP_TABLE_NAME = "reviewer_".$validation["service_index"];
-    $DB_STMT->bind_param("si", $TEMP_TABLE_NAME, $validation["service_index"]);
+    $DB_STMT->bind_param("i", $review_index);
     $DB_STMT->execute();
     if ($DB_STMT->errno != 0) {
         # review deletion query error

@@ -116,7 +116,6 @@ foreach ($serviceDueResult as $dueIndex) {
 
 # execute service deletion query
     try {
-        $TEMP_TABLE_NAME = "reviewer_".$TEMP_SERVICE_INDEX;
         $DB_SQL = "DELETE FROM `reviewer_service` WHERE `service_index` = ?";
         $DB_STMT = $DB->prepare($DB_SQL);
         # database query not ready

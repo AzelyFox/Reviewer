@@ -72,8 +72,9 @@ if (isset($_REQUEST["review_order"]))
 $reviewResult = array();
 # execute service reviews query
 try {
+    $TEMP_TABLE_NAME = "reviewer_".$validation["service_index"];
     /** @noinspection SqlResolve */
-    $DB_SQL = "SELECT `review_index`, `review_tag`, `review_user`, `review_rating`, `review_title`, `review_content`, `review_created` FROM ?";
+    $DB_SQL = "SELECT `review_index`, `review_tag`, `review_user`, `review_rating`, `review_title`, `review_content`, `review_created` FROM $TEMP_TABLE_NAME";
     if ($review_order == 0) $DB_SQL .= " ORDER BY `review_index` ASC";
     if ($review_order == 1) $DB_SQL .= " ORDER BY `review_index` DESC";
     if ($review_order == 2) $DB_SQL .= " ORDER BY `review_rating` ASC";
@@ -90,8 +91,6 @@ try {
         echo urldecode($outputJson);
         exit();
     }
-    $TEMP_TABLE_NAME = "reviewer_".$validation["service_index"];
-    $DB_STMT->bind_param("s", $TEMP_TABLE_NAME);
     $DB_STMT->execute();
     if ($DB_STMT->errno != 0) {
         # service reviews query error

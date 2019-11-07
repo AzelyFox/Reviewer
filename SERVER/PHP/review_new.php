@@ -69,21 +69,21 @@ if (isset($_REQUEST["review_content"]))
 
 # execute review insertion query
 try {
+    $TEMP_TABLE_NAME = "reviewer_".$validation["service_index"];
     /** @noinspection SqlResolve */
-    $DB_SQL = "INSERT INTO ? (`review_tag`, `review_user`, `review_rating`, `review_title`, `review_content`, `review_created`) VALUES (?, ?, ?, ?, ?, NOW())";
+    $DB_SQL = "INSERT INTO $TEMP_TABLE_NAME (`review_tag`, `review_user`, `review_rating`, `review_title`, `review_content`, `review_created`) VALUES (?, ?, ?, ?, ?, NOW())";
     $DB_STMT = $DB->prepare($DB_SQL);
     # database query not ready
     if (!$DB_STMT) {
         $output = array();
         $output["result"] = -2;
-        $output["error"] = "DB PREPARE FAILURE";
+        $output["error"] = $DB->error;
         $output["error_debug"] = basename(__FILE__).".".__LINE__;
         $outputJson = json_encode($output);
         echo urldecode($outputJson);
         exit();
     }
-    $TEMP_TABLE_NAME = "reviewer_".$validation["service_index"];
-    $DB_STMT->bind_param("sssdss", $TEMP_TABLE_NAME, $review_tag, $review_user, $review_rating, $review_title, $review_content);
+    $DB_STMT->bind_param("ssdss", $review_tag, $review_user, $review_rating, $review_title, $review_content);
     $DB_STMT->execute();
     if ($DB_STMT->errno != 0) {
         # review insertion query error
