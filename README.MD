@@ -8,15 +8,11 @@ A simple, minimized review collector.
 - Register new service to collect user reviews  
 - Collect review by calling API  
 - Show reviews in [official web](https://reviewer.devx.kr)  
-- Android, CSharp library provided!  
+- Android library provided!  
 
 ## Android Library
 [ANDROID PROJECT](https://github.com/LIMECAKE/Reviewer/tree/master/Android)  
 [ANDROID LIBRARY DOWNLOAD](https://github.com/LIMECAKE/Reviewer/releases)  
-
-## CSharp Library
-[CSharp PROJECT](https://github.com/LIMECAKE/Reviewer/tree/master/CSHARP)  
-[CSharp LIBRARY DOWNLOAD](https://github.com/LIMECAKE/Reviewer/releases)  
 
 ## How to Use
 - Create new service in [official website](https://reviewer.devx.kr)  
