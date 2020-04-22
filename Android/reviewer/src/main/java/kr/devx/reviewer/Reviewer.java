@@ -9,9 +9,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Reviewer {
-    public static void newReviewGUI(Activity activity, String key, double marketMoveMinRate, String marketPackage) {
-
-    }
 
     public static void newReview(String key, Review review) {
         ContentValues values = new ContentValues();
@@ -38,15 +35,22 @@ public class Reviewer {
         protected String doInBackground(Void... params) {
 
             String result;
-            RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
-            result = requestHttpURLConnection.request(url, values);
-
+            try {
+                RequestHttpURLConnection requestHttpURLConnection = new RequestHttpURLConnection();
+                result = requestHttpURLConnection.request(url, values);
+            } catch (Exception e) {
+                result = null;
+                Log.e("DEVX-REVIEWER","ERROR : " + e.getCause());
+            }
             return result;
         }
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            if (s == null) {
+                return;
+            }
             try {
                 JSONObject result = new JSONObject(s);
                 int resultCode = result.getInt("result");
