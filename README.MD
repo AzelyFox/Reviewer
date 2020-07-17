@@ -1,8 +1,27 @@
-# REVIEWER
+<h1 align="center">
+  <img src="logo.png" alt="Reviewer Logo" width="480">
+  <br>
+  <p>Reviewer</p>
+</h1>
 
-![reviewerlogo](https://user-images.githubusercontent.com/8467374/79943909-24cb6080-84a5-11ea-82e6-784a7aaa99bf.png)  
+<p align="center">
+    <a href="https://reviewer.devx.kr/">
+            <img src="https://img.shields.io/badge/DEVX-reviewer-black?style=flat-square" />
+        </a>
+    <a href="#license">
+        <img src="https://img.shields.io/github/license/LIMECAKE/Reviewer?style=flat-square" />
+    </a>
+    <a href="https://github.com/LIMECAKE/Reviewer/releases">
+        <img src="https://img.shields.io/github/v/release/LIMECAKE/Reviewer?style=flat-square" />
+    </a>
+    <a href="https://github.com/LIMECAKE/Reviewer/issues">
+        <img src="https://img.shields.io/badge/SUPPORT-LIVE-green?style=flat-square" />
+    </a>
+</p>
 
-A simple, minimized review collector.  
+<p align="center">
+A simple, minimized review collector.
+</p>
 
 ## Features
 - Register new service to collect user reviews  
@@ -21,10 +40,10 @@ A simple, minimized review collector.
 
 ## Screenshots
 
-<div>
-<img src="https://user-images.githubusercontent.com/8467374/79943905-23019d00-84a5-11ea-80f8-b2cf83376714.png" width="40%"></img>
-<img src="https://user-images.githubusercontent.com/8467374/79943908-2432ca00-84a5-11ea-9041-d659c4c0ff9e.png" width="40%"></img>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/8467374/79943905-23019d00-84a5-11ea-80f8-b2cf83376714.png" width="80%"></img>
+<img src="https://user-images.githubusercontent.com/8467374/79943908-2432ca00-84a5-11ea-9041-d659c4c0ff9e.png" width="80%"></img>
 </div>
 
 ## License
-[MIT License](https://github.com/LIMECAKE/Reviewer/blob/master/LICENSE)
+[MIT](LICENSE) © 2020 LimeCake <limecake23@gmail.com>
