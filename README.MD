@@ -1,7 +1,5 @@
 <h1 align="center">
-  <img src="logo.png" alt="Reviewer Logo" width="480">
-  <br>
-  <p>Reviewer</p>
+  <img src="logo.png" alt="Reviewer" width="480">
 </h1>
 
 <p align="center">
