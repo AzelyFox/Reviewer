@@ -7,12 +7,12 @@
             <img src="https://img.shields.io/badge/DEVX-reviewer-black?style=flat-square" />
         </a>
     <a href="#license">
-        <img src="https://img.shields.io/github/license/LIMECAKE/Reviewer?style=flat-square" />
+        <img src="https://img.shields.io/github/license/AzelyFox/Reviewer?style=flat-square" />
     </a>
-    <a href="https://github.com/LIMECAKE/Reviewer/releases">
-        <img src="https://img.shields.io/github/v/release/LIMECAKE/Reviewer?style=flat-square" />
+    <a href="https://github.com/AzelyFox/Reviewer/releases">
+        <img src="https://img.shields.io/github/v/release/AzelyFox/Reviewer?style=flat-square" />
     </a>
-    <a href="https://github.com/LIMECAKE/Reviewer/issues">
+    <a href="https://github.com/AzelyFox/Reviewer/issues">
         <img src="https://img.shields.io/badge/SUPPORT-LIVE-green?style=flat-square" />
     </a>
 </p>
